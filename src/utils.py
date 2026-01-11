@@ -12,5 +12,5 @@ def load_knowledge_base():
 
 def mock_lead_capture(name: str, email: str, platform: str):
     """Simulates sending lead data to a backend CRM."""
-    print(f"\nLead captured successfully: {name}, {email}, {platform}\n")
+    print(f"\n[SYSTEM ACTION] Lead captured successfully: {name}, {email}, {platform}\n")
     return "Success"
