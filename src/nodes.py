@@ -1,14 +1,18 @@
+import os
 import json
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import AIMessage
 from langchain_core.prompts import ChatPromptTemplate
 
 from src.state import AgentState
 from src.utils import load_knowledge_base, mock_lead_capture
 
-# Initialize LLM
-# Ensure OPENAI_API_KEY is in your environment variables
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+# Initialize Gemini
+llm = ChatGoogleGenerativeAI(
+    model="gemini-1.5-flash",
+    temperature=0,
+    max_retries=2,
+)
 
 KNOWLEDGE_BASE = load_knowledge_base()
 
