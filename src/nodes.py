@@ -12,7 +12,7 @@ from src.utils import load_knowledge_base, mock_lead_capture
 
 # Initialize Gemini
 llm = ChatGoogleGenerativeAI(
-    model="gemini-pro",
+    model="gemini-1.5-flash",
     temperature=0,
     max_retries=2
 )
