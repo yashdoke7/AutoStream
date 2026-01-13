@@ -3,15 +3,18 @@ import json
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import AIMessage
 from langchain_core.prompts import ChatPromptTemplate
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from src.state import AgentState
 from src.utils import load_knowledge_base, mock_lead_capture
 
 # Initialize Gemini
 llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
+    model="gemini-pro",
     temperature=0,
-    max_retries=2,
+    max_retries=2
 )
 
 KNOWLEDGE_BASE = load_knowledge_base()
